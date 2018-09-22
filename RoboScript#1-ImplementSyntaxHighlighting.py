@@ -18,7 +18,6 @@ def highlight(code):
         elif code[i].isdigit() and not code[i+1].isdigit() and code[j:i+1].isdigit():
             s.append(temp['D'] % code[j:i+1])
             j = i+1
-    print(i,j)
     if code [j] in '()':
         s.append(code[j])
     elif code[j:i+2].isdigit():
@@ -26,7 +25,7 @@ def highlight(code):
     else:
         s.append(temp[code[j]] % code[j:i+2])
     return(''.join(s))
-highlight("FFFL12L(12R)")
+print(highlight("FFFL12L(12R)"))
             
         
             
