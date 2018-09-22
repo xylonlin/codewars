@@ -1,4 +1,17 @@
-
+#codewars link
+#https://www.codewars.com/kata/pyramid-slide-down/train/python
+def longest_slide_down(pyramid):
+    n = len(pyramid)
+    temp = {}
+    def func(i,j):
+        if i == n:
+            return 0
+        if (i,j) in temp:
+            return temp[(i,j)]
+        sum = pyramid[i][j] + max(func(i+1,j),func(i+1,j+1))
+        temp[(i,j)]= sum
+        return sum
+    return func(0,0)
         
 test = [
     [75],
